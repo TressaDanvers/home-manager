@@ -1,15 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./../modules/git.nix ./../modules/bash.nix ];
+  imports = [ ./../../modules/git-configuration.nix ./../../modules/bash-configuration.nix ];
 
   home = {
     stateVersion = "24.05";
 
     username = "tressa";
     homeDirectory = "/home/tressa";
-
-    packages = with pkgs; [ tree ];
 
     sessionVariables = { EDITOR = "nano"; };
   };

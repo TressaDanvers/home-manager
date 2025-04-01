@@ -17,7 +17,7 @@
     homeConfigurations = {
       tressa = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./users/tressa.nix ];
+        modules = [ ./users/tressa/home-configuration.nix ];
       };
     };
   };
