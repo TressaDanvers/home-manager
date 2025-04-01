@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ ./../modules/git.nix ];
+
   home = {
     stateVersion = "24.05";
 
@@ -10,13 +12,5 @@
     sessionVariables = { EDITOR = "nano"; };
   };
 
-  programs = {
-    git = {
-      enable = true;
-      userEmail = "TDanvers@protonmail.ch";
-      userName = "Tressa Danvers";
-    };
-
-    home-manager.enable = true;
-  };
+  programs.home-manager.enable = true;
 }
