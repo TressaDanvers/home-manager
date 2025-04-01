@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./../modules/git.nix ];
+  imports = [ ./../modules/git.nix ./../modules/bash.nix ];
 
   home = {
     stateVersion = "24.05";
