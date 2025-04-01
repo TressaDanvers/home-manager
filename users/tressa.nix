@@ -9,6 +9,8 @@
     username = "tressa";
     homeDirectory = "/home/tressa";
 
+    packages = with pkgs; [ tree ];
+
     sessionVariables = { EDITOR = "nano"; };
   };
 
