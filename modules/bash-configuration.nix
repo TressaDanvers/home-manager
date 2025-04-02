@@ -6,6 +6,7 @@
   programs = {
     bash = {
       enable = true;
+      historyFile = "$XDG_STATE_HOME/bash/shell-history";
       initExtra = ''
         _ec() {
           local EC=$?;
