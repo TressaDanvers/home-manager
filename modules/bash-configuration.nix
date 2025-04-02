@@ -6,7 +6,7 @@
   programs = {
     bash = {
       enable = true;
-      bashrcExtra = ''
+      initExtra = ''
         _ec() {
           local EC=$?;
           if ! [[ $EC == 0 ]]; then
