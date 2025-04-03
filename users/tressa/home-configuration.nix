@@ -5,6 +5,7 @@
     ./../../modules/bash-configuration.nix
     ./../../modules/git-configuration.nix
     ./../../modules/xdg-configuration.nix
+    ./../../modules/hyprland-configuration.nix
   ];
 
   home = {
