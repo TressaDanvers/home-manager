@@ -45,6 +45,16 @@
           (import ./users/tressa.nix theme)
         ];
       };
+
+      "tressa@opensuse-vm" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = let 
+          theme = nixpkgs.lib.recursiveUpdate host-themes.suse user-themes.tressa;
+        in [
+          (import ./hosts/opensuse-vm.nix theme)
+          (import ./users/tressa.nix theme)
+        ];
+      };
     };
   };
 }

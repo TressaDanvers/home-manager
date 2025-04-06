@@ -12,4 +12,11 @@
       host-name = "33";
     };
   };
+
+  suse = {
+    color = { 
+      os = "32";
+      host-name = "33";
+    };
+  };
 }
