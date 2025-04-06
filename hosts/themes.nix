@@ -5,4 +5,11 @@
       host-name = "33";
     };
   };
+
+  fedora = {
+    color = { 
+      os = "34";
+      host-name = "33";
+    };
+  };
 }
