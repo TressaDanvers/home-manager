@@ -36,6 +36,16 @@
         ];
       };
 
+      "tressa@arch-vm" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = let 
+          theme = nixpkgs.lib.recursiveUpdate host-themes.arch user-themes.tressa;
+        in [
+          (import ./hosts/arch-vm.nix theme)
+          (import ./users/tressa.nix theme)
+        ];
+      };
+
       "tressa@fedora-vm" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = let 

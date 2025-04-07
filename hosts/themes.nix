@@ -1,4 +1,11 @@
 {
+  arch = {
+    color = { 
+      os = "36";
+      host-name = "33";
+    };
+  };
+
   debian = {
     color = { 
       os = "31";
