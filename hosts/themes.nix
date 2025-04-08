@@ -20,6 +20,13 @@
     };
   };
 
+  nixos = {
+    color = { 
+      os = "34";
+      host-name = "33";
+    };
+  };
+
   suse = {
     color = { 
       os = "32";
