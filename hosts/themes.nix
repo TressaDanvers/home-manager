@@ -1,4 +1,11 @@
 {
+  default = {
+    color = { 
+      os = "37";
+      host-name = "33";
+    };
+  };
+
   arch = {
     color = { 
       os = "36";
