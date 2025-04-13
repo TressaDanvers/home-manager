@@ -26,24 +26,6 @@
     "${user-name}@${host-name}" = generate-config host-os host-name user-name;
   };
 
-  minimum-nonnix-system = target-os: target: let
-    theme = lib.recursiveUpdate host-themes.${target-os} user-themes.default;
-  in {
-    "${target}" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [
-        {
-          home = {
-            username = builtins.getEnv "USER";
-            homeDirectory = builtins.getEnv "HOME";
-          };
-        }
-
-        (import ./hosts/generic-linux.nix theme)
-      ];
-    };
-  };
-
   merge = lib.lists.foldr (a: b: a // b) {};
   merge-attrs = f: lib.attrsets.foldlAttrs (a: b: c: a // (f b c)) {};
 
@@ -58,12 +40,8 @@
 
   host-group = users: hosts:
     merge-attrs (with-hostnames-multi users) hosts;
-
-  minimum-nonnix-system-group = targets:
-    merge-attrs minimum-nonnix-system targets;
 in {
   merge = merge;
   generic-group = generic-group;
   host-group = host-group;
-  minimum-nonnix-system-group = minimum-nonnix-system-group;
 }
