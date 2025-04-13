@@ -1,7 +1,5 @@
 theme: { config, pkgs, ... }: {
   home = {
-    stateVersion = "24.11";
-
     packages = with pkgs; [ tmux tree ];
     sessionVariables = { EDITOR = "nano"; };
   };
@@ -63,16 +61,9 @@ theme: { config, pkgs, ... }: {
         ];
       };
     };
-
-    home-manager.enable = true;
   };
 
   xdg.enable = true;
-
-  nix = {
-    package = pkgs.nix;
-    settings.experimental-features = [ "nix-command" "flakes" ];
-  };
 
   nixpkgs.config.allowUnfree = true;
 }
