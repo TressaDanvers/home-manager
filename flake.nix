@@ -22,6 +22,11 @@
         nixos    = [ "nixos-vm"    ];
         openSUSE = [ "opensuse-vm" ];
       })
+
+      ## Minimum Config for Install
+      (minimum-nonnix-system-group {
+        debian = "debian-minimum";
+      })
     ];
   };
 }
