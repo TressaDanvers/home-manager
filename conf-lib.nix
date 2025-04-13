@@ -31,7 +31,16 @@
   in {
     "${target}" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      modules = [ (import ./hosts/generic-linux.nix theme) ];
+      modules = [
+        {
+          home = {
+            username = builtins.getEnv "USER";
+            homeDirectory = builtins.getEnv "HOME";
+          }
+        }
+
+        (import ./hosts/generic-linux.nix theme)
+      ];
     };
   };
 
