@@ -19,7 +19,7 @@
   };
 
   generic = user-name: {
-    "${user-name}" = generate-config "default" "default" user-name;
+    "${user-name}" = generate-config "default" "generic-linux" user-name;
   };
 
   with-hostname = host-os: host-name: user-name: {
@@ -36,7 +36,7 @@
           home = {
             username = builtins.getEnv "USER";
             homeDirectory = builtins.getEnv "HOME";
-          }
+          };
         }
 
         (import ./hosts/generic-linux.nix theme)
